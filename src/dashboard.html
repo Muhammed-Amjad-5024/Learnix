@@ -1,22 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Dashboard | Learnix</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
 </head>
 
+
 <body>
+
+
+    <!-- =========================================
+         DASHBOARD HEADER
+    ========================================== -->
 
     <header class="dashboard-header">
 
         <div>
-            <h1>Learnix</h1>
-            <p>Institution Admin Dashboard</p>
+
+            <h1>
+                Learnix
+            </h1>
+
+            <p>
+                Institution Admin Dashboard
+            </p>
+
         </div>
+
 
         <button
             id="logout-button"
@@ -29,54 +53,689 @@
     </header>
 
 
+
+    <!-- =========================================
+         MAIN DASHBOARD
+    ========================================== -->
+
     <main class="dashboard-container">
 
-        <!-- Welcome section -->
-        <section class="dashboard-welcome">
 
-            <h2 id="welcome-message">
-                Welcome
-            </h2>
+        <!-- =====================================
+             DASHBOARD HOME
+        ====================================== -->
 
-            <p id="institution-name">
-                Loading institution...
-            </p>
+        <section
+            id="dashboard-home"
+            class="dashboard-view"
+        >
+
+
+            <!-- Welcome -->
+
+            <section class="dashboard-welcome">
+
+                <h2 id="welcome-message">
+                    Welcome
+                </h2>
+
+                <p id="institution-name">
+                    Loading institution...
+                </p>
+
+            </section>
+
+
+
+            <!-- Statistics -->
+
+            <section class="dashboard-cards">
+
+
+                <div class="dashboard-card">
+
+                    <h3>
+                        Students
+                    </h3>
+
+                    <p id="student-count">
+                        0
+                    </p>
+
+                </div>
+
+
+
+                <div class="dashboard-card">
+
+                    <h3>
+                        Faculty
+                    </h3>
+
+                    <p id="faculty-count">
+                        0
+                    </p>
+
+                </div>
+
+
+
+                <div class="dashboard-card">
+
+                    <h3>
+                        Classrooms
+                    </h3>
+
+                    <p id="classroom-count">
+                        0
+                    </p>
+
+                </div>
+
+
+
+                <div class="dashboard-card">
+
+                    <h3>
+                        Subjects
+                    </h3>
+
+                    <p id="subject-count">
+                        0
+                    </p>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- Management -->
+
+            <section class="management-section">
+
+
+                <div class="section-title">
+
+                    <h2>
+                        Management
+                    </h2>
+
+                    <p>
+                        Manage your institution's academic
+                        environment from one place.
+                    </p>
+
+                </div>
+
+
+
+                <div class="management-grid">
+
+
+                    <!-- Faculty Management -->
+
+                    <div class="management-card">
+
+                        <div class="management-card-icon">
+                            👥
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Faculty
+                            </h3>
+
+                            <p>
+                                Manage faculty members,
+                                their information and status.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            id="open-faculty-button"
+                            type="button"
+                            class="management-button"
+                        >
+                            Manage Faculty →
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- Classroom Management -->
+
+                    <div class="management-card">
+
+                        <div class="management-card-icon">
+                            🏫
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Classrooms
+                            </h3>
+
+                            <p>
+                                Manage classrooms,
+                                subjects and academic structure.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            id="open-classroom-button"
+                            type="button"
+                            class="management-button"
+                        >
+                            Manage Classrooms →
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- Student Management -->
+
+                    <div class="management-card">
+
+                        <div class="management-card-icon">
+                            🎓
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Students
+                            </h3>
+
+                            <p>
+                                Manage students and
+                                institution membership.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="management-button"
+                            disabled
+                        >
+                            Coming Soon
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- Notifications -->
+
+                    <div class="management-card">
+
+                        <div class="management-card-icon">
+                            🔔
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Notifications
+                            </h3>
+
+                            <p>
+                                View important updates
+                                and institution activity.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="management-button"
+                            disabled
+                        >
+                            Coming Soon
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+            </section>
 
         </section>
 
 
-        <!-- Dashboard statistics -->
-        <section class="dashboard-cards">
 
-            <div class="dashboard-card">
-                <h3>Students</h3>
-                <p id="student-count">0</p>
+        <!-- =====================================
+             FACULTY MANAGEMENT VIEW
+        ====================================== -->
+
+        <section
+            id="faculty-management-view"
+            class="dashboard-view"
+            hidden
+        >
+
+
+            <!-- Faculty page header -->
+
+            <div class="management-page-header">
+
+                <div>
+
+
+                    <button
+                        id="back-from-faculty-button"
+                        type="button"
+                        class="back-button"
+                    >
+                        ← Dashboard
+                    </button>
+
+
+                    <h2>
+                        Faculty Management
+                    </h2>
+
+
+                    <p>
+                        Manage faculty members of your institution.
+                    </p>
+
+                </div>
+
             </div>
 
-            <div class="dashboard-card">
-                <h3>Faculty</h3>
-                <p id="faculty-count">0</p>
+
+
+            <!-- Faculty toolbar -->
+
+            <div class="management-toolbar">
+
+
+                <div class="search-box">
+
+                    <input
+                        type="search"
+                        id="faculty-search"
+                        placeholder="Search by faculty name or ID..."
+                    >
+
+                </div>
+
+
+                <button
+                    id="create-faculty-button"
+                    type="button"
+                >
+                    + Add Faculty
+                </button>
+
+
             </div>
 
-            <div class="dashboard-card">
-                <h3>Classrooms</h3>
-                <p id="classroom-count">0</p>
+
+
+            <!-- Faculty list -->
+
+            <div
+                id="faculty-list"
+                class="faculty-list"
+            >
+
+                <p>
+                    Loading faculty...
+                </p>
+
             </div>
 
-            <div class="dashboard-card">
-                <h3>Subjects</h3>
-                <p id="subject-count">0</p>
-            </div>
+
+
+            <!-- =================================
+                 FACULTY DETAILS
+            ================================== -->
+
+            <section
+                id="faculty-details-section"
+                class="form-panel faculty-details-panel"
+                hidden
+            >
+
+
+                <div class="form-panel-header">
+
+
+                    <div>
+
+                        <h2>
+                            Faculty Details
+                        </h2>
+
+                        <p>
+                            View information about this
+                            faculty member.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        id="close-faculty-details-button"
+                        type="button"
+                        class="close-button"
+                    >
+                        ×
+                    </button>
+
+
+                </div>
+
+
+
+                <div
+                    id="faculty-details"
+                    class="faculty-details"
+                >
+
+                    <!--
+                        Faculty details will be
+                        inserted here by JavaScript.
+                    -->
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================
+                 ADD FACULTY
+            ================================== -->
+
+            <section
+                id="create-faculty-section"
+                class="form-panel"
+                hidden
+            >
+
+
+                <div class="form-panel-header">
+
+
+                    <div>
+
+                        <h2>
+                            Add Faculty
+                        </h2>
+
+
+                        <p>
+                            Add a new faculty member
+                            to your institution.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        id="close-faculty-form-button"
+                        type="button"
+                        class="close-button"
+                    >
+                        ×
+                    </button>
+
+
+                </div>
+
+
+
+                <form
+                    id="create-faculty-form"
+                >
+
+
+                    <!-- Full Name -->
+
+                    <div class="form-group">
+
+                        <label
+                            for="faculty-name"
+                        >
+                            Full Name
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="faculty-name"
+                            name="faculty-name"
+                            placeholder="Example: Dr. John Mathew"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- Faculty ID -->
+
+                    <div class="form-group">
+
+                        <label
+                            for="faculty-code"
+                        >
+                            Faculty ID
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="faculty-code"
+                            name="faculty-code"
+                            placeholder="Example: MESITAM-FAC-002"
+                            required
+                        >
+
+
+                        <small>
+                            Use the unique faculty ID
+                            issued by your institution.
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- Email + Phone -->
+
+                    <div class="form-row">
+
+
+                        <div class="form-group">
+
+                            <label
+                                for="faculty-email"
+                            >
+                                Email
+                            </label>
+
+
+                            <input
+                                type="email"
+                                id="faculty-email"
+                                name="faculty-email"
+                                placeholder="faculty@example.com"
+                            >
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label
+                                for="faculty-phone"
+                            >
+                                Phone
+                            </label>
+
+
+                            <input
+                                type="tel"
+                                id="faculty-phone"
+                                name="faculty-phone"
+                                placeholder="Enter phone number"
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- Department -->
+
+                    <div class="form-group">
+
+                        <label
+                            for="faculty-department"
+                        >
+                            Department
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="faculty-department"
+                            name="faculty-department"
+                            placeholder="Example: Computer Science and Engineering"
+                        >
+
+                    </div>
+
+
+
+                    <!-- Actions -->
+
+                    <div class="form-actions">
+
+
+                        <button
+                            id="cancel-faculty-button"
+                            type="button"
+                            class="secondary-button"
+                        >
+                            Cancel
+                        </button>
+
+
+                        <button
+                            type="submit"
+                        >
+                            Add Faculty
+                        </button>
+
+
+                    </div>
+
+
+
+                    <p
+                        id="faculty-message"
+                    ></p>
+
+
+                </form>
+
+            </section>
+
 
         </section>
 
 
-        <!-- Classrooms -->
-        <section class="dashboard-section">
 
-            <div class="section-header">
+        <!-- =====================================
+             CLASSROOM MANAGEMENT VIEW
+        ====================================== -->
 
-                <h2>Classrooms</h2>
+        <section
+            id="classroom-management-view"
+            class="dashboard-view"
+            hidden
+        >
+
+
+            <!-- Classroom page header -->
+
+            <div class="management-page-header">
+
+
+                <div>
+
+
+                    <button
+                        id="back-from-classroom-button"
+                        type="button"
+                        class="back-button"
+                    >
+                        ← Dashboard
+                    </button>
+
+
+                    <h2>
+                        Classroom Management
+                    </h2>
+
+
+                    <p>
+                        Manage classrooms and their subjects.
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- Classroom toolbar -->
+
+            <div class="management-toolbar">
+
+
+                <div>
+
+                    <h3>
+                        Classrooms
+                    </h3>
+
+
+                    <p>
+                        Organize your institution's
+                        academic groups.
+                    </p>
+
+                </div>
+
 
                 <button
                     id="create-classroom-button"
@@ -85,75 +744,196 @@
                     + Create Classroom
                 </button>
 
+
             </div>
 
 
-            <div id="classroom-list">
-                <p>Loading classrooms...</p>
+
+            <!-- Classroom list -->
+
+            <div
+                id="classroom-list"
+                class="classroom-list"
+            >
+
+                <p>
+                    Loading classrooms...
+                </p>
+
             </div>
 
-        </section>
 
 
-        <!-- Create Classroom -->
-        <section
-            id="create-classroom-section"
-            class="dashboard-section"
-            hidden
-        >
+            <!-- =================================
+                 CREATE CLASSROOM
+            ================================== -->
 
-            <h2>Create Classroom</h2>
+            <section
+                id="create-classroom-section"
+                class="form-panel"
+                hidden
+            >
 
 
-            <form id="create-classroom-form">
+                <div class="form-panel-header">
 
-                <div class="form-group">
 
-                    <label for="classroom-name">
-                        Classroom Name
-                    </label>
+                    <div>
 
-                    <input
-                        type="text"
-                        id="classroom-name"
-                        name="classroom-name"
-                        placeholder="Example: CSE S6"
-                        required
+                        <h2>
+                            Create a New Classroom
+                        </h2>
+
+
+                        <p>
+                            Set up a classroom for
+                            your institution.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        id="close-classroom-form-button"
+                        type="button"
+                        class="close-button"
                     >
+                        ×
+                    </button>
+
 
                 </div>
 
 
-                <div class="form-group">
 
-                    <label for="classroom-description">
-                        Description
-                    </label>
-
-                    <textarea
-                        id="classroom-description"
-                        name="classroom-description"
-                        placeholder="Enter classroom description"
-                        rows="4"
-                    ></textarea>
-
-                </div>
+                <form
+                    id="create-classroom-form"
+                >
 
 
-                <button type="submit">
-                    Create Classroom
-                </button>
+                    <!-- Classroom Name -->
 
-                <p id="classroom-message"></p>
+                    <div class="form-group">
 
-            </form>
+                        <label
+                            for="classroom-name"
+                        >
+                            Classroom Name
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="classroom-name"
+                            name="classroom-name"
+                            placeholder="Example: CSE S5"
+                            required
+                        >
+
+
+                        <small>
+                            Example: CSE S5, CSE S6,
+                            ECE S5, etc.
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- Description -->
+
+                    <div class="form-group">
+
+                        <label
+                            for="classroom-description"
+                        >
+                            Description
+                        </label>
+
+
+                        <textarea
+                            id="classroom-description"
+                            name="classroom-description"
+                            placeholder="Describe this classroom..."
+                            rows="5"
+                        ></textarea>
+
+                    </div>
+
+
+
+                    <!-- Preview -->
+
+                    <div class="form-preview">
+
+
+                        <span>
+                            Classroom Preview
+                        </span>
+
+
+                        <strong>
+                            Your classroom will appear
+                            here after creation.
+                        </strong>
+
+
+                    </div>
+
+
+
+                    <!-- Actions -->
+
+                    <div class="form-actions">
+
+
+                        <button
+                            id="cancel-classroom-button"
+                            type="button"
+                            class="secondary-button"
+                        >
+                            Cancel
+                        </button>
+
+
+                        <button
+                            type="submit"
+                        >
+                            Create Classroom
+                        </button>
+
+
+                    </div>
+
+
+
+                    <p
+                        id="classroom-message"
+                    ></p>
+
+
+                </form>
+
+            </section>
+
 
         </section>
+
 
     </main>
 
 
-    <script type="module" src="js/dashboard.js"></script>
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script
+        type="module"
+        src="js/dashboard.js"
+    ></script>
+
 
 </body>
+
 </html>
